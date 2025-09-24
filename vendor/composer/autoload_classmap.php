@@ -7,6 +7,16 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'WcCheckoutGuard\\Admin\\AdminAjaxHandler' => $baseDir . '/src/Admin/AdminAjaxHandler.php',
+    'WcCheckoutGuard\\Admin\\AdminManager' => $baseDir . '/src/Admin/AdminManager.php',
+    'WcCheckoutGuard\\Admin\\AdminRenderer' => $baseDir . '/src/Admin/AdminRenderer.php',
     'WcCheckoutGuard\\Core\\Activator' => $baseDir . '/src/Core/Activator.php',
+    'WcCheckoutGuard\\Core\\Deactivator' => $baseDir . '/src/Core/Deactivator.php',
     'WcCheckoutGuard\\Core\\Plugin' => $baseDir . '/src/Core/Plugin.php',
+    'WcCheckoutGuard\\Modules\\Checkout\\CheckoutHandler' => $baseDir . '/src/Modules/Checkout/CheckoutHandler.php',
+    'WcCheckoutGuard\\Modules\\Checkout\\CheckoutManager' => $baseDir . '/src/Modules/Checkout/CheckoutManager.php',
+    'WcCheckoutGuard\\Modules\\Checkout\\CheckoutValidator' => $baseDir . '/src/Modules/Checkout/CheckoutValidator.php',
+    'WcCheckoutGuard\\Modules\\Logging\\LoggingHandler' => $baseDir . '/src/Modules/Logging/LoggingHandler.php',
+    'WcCheckoutGuard\\Modules\\Logging\\LoggingManager' => $baseDir . '/src/Modules/Logging/LoggingManager.php',
+    'WcCheckoutGuard\\Modules\\Logging\\LoggingValidator' => $baseDir . '/src/Modules/Logging/LoggingValidator.php',
 );

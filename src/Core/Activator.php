@@ -60,6 +60,7 @@ class Activator {
 	private static function create_default_options() {
 		$default_options = array(
 			'enable_checkout_guard' => true,
+			'enable_cart_events'    => true,
 			'enable_logging'        => true,
 			'enable_admin'          => true,
 			'debug_mode'            => false,

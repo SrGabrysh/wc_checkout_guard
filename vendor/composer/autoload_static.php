@@ -22,8 +22,18 @@ class ComposerStaticInitf72e21d8ffc4e9ddae33b05c5d2e5876
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'WcCheckoutGuard\\Admin\\AdminAjaxHandler' => __DIR__ . '/../..' . '/src/Admin/AdminAjaxHandler.php',
+        'WcCheckoutGuard\\Admin\\AdminManager' => __DIR__ . '/../..' . '/src/Admin/AdminManager.php',
+        'WcCheckoutGuard\\Admin\\AdminRenderer' => __DIR__ . '/../..' . '/src/Admin/AdminRenderer.php',
         'WcCheckoutGuard\\Core\\Activator' => __DIR__ . '/../..' . '/src/Core/Activator.php',
+        'WcCheckoutGuard\\Core\\Deactivator' => __DIR__ . '/../..' . '/src/Core/Deactivator.php',
         'WcCheckoutGuard\\Core\\Plugin' => __DIR__ . '/../..' . '/src/Core/Plugin.php',
+        'WcCheckoutGuard\\Modules\\Checkout\\CheckoutHandler' => __DIR__ . '/../..' . '/src/Modules/Checkout/CheckoutHandler.php',
+        'WcCheckoutGuard\\Modules\\Checkout\\CheckoutManager' => __DIR__ . '/../..' . '/src/Modules/Checkout/CheckoutManager.php',
+        'WcCheckoutGuard\\Modules\\Checkout\\CheckoutValidator' => __DIR__ . '/../..' . '/src/Modules/Checkout/CheckoutValidator.php',
+        'WcCheckoutGuard\\Modules\\Logging\\LoggingHandler' => __DIR__ . '/../..' . '/src/Modules/Logging/LoggingHandler.php',
+        'WcCheckoutGuard\\Modules\\Logging\\LoggingManager' => __DIR__ . '/../..' . '/src/Modules/Logging/LoggingManager.php',
+        'WcCheckoutGuard\\Modules\\Logging\\LoggingValidator' => __DIR__ . '/../..' . '/src/Modules/Logging/LoggingValidator.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

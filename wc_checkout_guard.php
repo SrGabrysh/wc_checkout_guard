@@ -3,7 +3,7 @@
  * Plugin Name: WooCommerce Checkout Guard
  * Plugin URI: https://github.com/tb-web/wc_checkout_guard
  * Description: Plugin WooCommerce limitant les commandes à 1 formation maximum. Redirige le checkout vers le panier si >1 article et bloque la validation. Journalise les visites de /commander/ avec rotation automatique des logs. Interface admin intégrée pour consulter les logs en temps réel.
- * Version: 1.0.1
+ * Version: 1.1.1
  * Author: TB-Web
  * Author URI: https://tb-web.fr
  * License: GPL v2 or later
@@ -22,7 +22,7 @@ declare( strict_types=1 );
 defined( 'ABSPATH' ) || exit;
 
 // Constantes du plugin
-define( 'WC_CHECKOUT_GUARD_VERSION', '1.0.1' );
+define( 'WC_CHECKOUT_GUARD_VERSION', '1.1.1' );
 define( 'WC_CHECKOUT_GUARD_PLUGIN_FILE', __FILE__ );
 define( 'WC_CHECKOUT_GUARD_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WC_CHECKOUT_GUARD_PLUGIN_URL', plugin_dir_url( __FILE__ ) );

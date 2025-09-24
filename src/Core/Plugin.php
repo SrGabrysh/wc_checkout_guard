@@ -9,6 +9,7 @@
 namespace WcCheckoutGuard\Core;
 
 use WcCheckoutGuard\Modules\Checkout\CheckoutManager;
+use WcCheckoutGuard\Modules\Cart\CartManager;
 use WcCheckoutGuard\Modules\Logging\LoggingManager;
 use WcCheckoutGuard\Admin\AdminManager;
 
@@ -30,7 +31,7 @@ class Plugin {
 	/**
 	 * Version du plugin
 	 */
-	const VERSION = '1.0.0';
+	const VERSION = '1.1.0';
 
 	/**
 	 * Modules du plugin
@@ -81,6 +82,7 @@ class Plugin {
 	private function get_default_config() {
 		return array(
 			'enable_checkout_guard' => true,
+			'enable_cart_events'    => true,
 			'enable_logging'        => true,
 			'enable_admin'          => true,
 			'debug_mode'            => false,
@@ -148,6 +150,11 @@ class Plugin {
 		if ( $this->is_module_enabled( 'checkout_guard' ) && $this->is_woocommerce_active() ) {
 			$this->modules['checkout'] = new CheckoutManager( $this->logger );
 		}
+
+		// Module cart events (gestion des événements panier)
+		if ( $this->is_module_enabled( 'cart_events' ) && $this->is_woocommerce_active() ) {
+			$this->modules['cart'] = new CartManager( $this->logger );
+		}
 	}
 
 	/**
@@ -176,8 +183,13 @@ class Plugin {
 	 */
 	public function on_plugins_loaded() {
 		// Vérification finale de WooCommerce après chargement des plugins
-		if ( ! $this->is_woocommerce_active() && $this->is_module_enabled( 'checkout_guard' ) ) {
-			$this->logger->warning( 'WooCommerce non détecté - Module checkout désactivé' );
+		if ( ! $this->is_woocommerce_active() ) {
+			if ( $this->is_module_enabled( 'checkout_guard' ) ) {
+				$this->logger->warning( 'WooCommerce non détecté - Module checkout désactivé' );
+			}
+			if ( $this->is_module_enabled( 'cart_events' ) ) {
+				$this->logger->warning( 'WooCommerce non détecté - Module cart events désactivé' );
+			}
 		}
 	}
 

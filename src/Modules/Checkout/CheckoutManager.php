@@ -70,6 +70,7 @@ class CheckoutManager {
 			'checkout_page'  => 'commander',
 			'cart_url'       => 'panier',
 			'error_message'  => 'Erreur : Votre panier contient %d formations. Vous ne pouvez commander qu\'une formation à la fois pour des raisons de suivi et de conformité. Veuillez supprimer les formations excédentaires.',
+			'notice_key'     => 'tb_qty_limit', // Clé unique pour identifier nos notices
 		);
 	}
 

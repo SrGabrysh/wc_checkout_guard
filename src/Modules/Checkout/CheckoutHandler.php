@@ -167,7 +167,7 @@ class CheckoutHandler {
 
 		if ( ! $this->validator->is_quantity_valid( $total_qty ) && $errors instanceof WP_Error ) {
 			$message = $this->get_error_message( $total_qty );
-			$errors->add( 'tb_qty_limit', $message, 400 );
+			$errors->add( $this->config['notice_key'] ?? 'tb_qty_limit', $message, 400 );
 			$this->error_added = true;
 
 			$this->logger->log_json( array(
@@ -195,7 +195,7 @@ class CheckoutHandler {
 
 		if ( ! $this->validator->is_quantity_valid( $total_qty ) && $errors instanceof WP_Error ) {
 			$message = $this->get_error_message( $total_qty );
-			$errors->add( 'tb_qty_limit', $message );
+			$errors->add( $this->config['notice_key'] ?? 'tb_qty_limit', $message );
 
 			$this->logger->log_json( array(
 				'event'     => 'block_checkout_legacy',
