@@ -1,0 +1,20 @@
+{
+    "name": "tb-web/wc_checkout_guard",
+    "description": "Plugin WooCommerce limitant les commandes à 1 formation maximum. Redirige le checkout vers le panier si >1 article et bloque la validation. Journalise les visites de /commander/ avec rotation automatique des logs. Interface admin intégrée pour consulter les logs en temps réel.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "php": ">=8.1"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "WcCheckoutGuard\\": "src/"
+        }
+    },
+    "scripts": {
+        "cs:lint": "phpcs --standard=phpcs.xml.dist --extensions=php,inc src",
+        "cs:fix": "phpcbf --standard=phpcs.xml.dist --extensions=php,inc src"
+    }
+}
